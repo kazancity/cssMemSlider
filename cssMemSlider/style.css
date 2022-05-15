@@ -31,18 +31,25 @@ input {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
 }
+
 .images {
   display: grid;
   overflow: hidden;
   grid-column-end: 3;
   grid-column-start: 1;
 }
-.text {
+img {
   width: 100%;
-  display: block;
-  grid-row: 1 / 2;
-  font-size: 1.8rem;
+  grid-row: 1 / 1;
+  object-fit: cover;
   grid-column: 1 / 2;
+  border-radius: 0.8rem;
+}
+p {
+  width: 100%;
+  grid-row: 1 / 1;
+  font-size: 1.8rem;
+  grid-column: 1 / 1;
 }
 .txt-all {
   grid-column: 1 / 2;
@@ -57,7 +64,7 @@ input {
   transform: scale(1.05);
   color: red;
 }
-.label-1, .label-2, .label-3, .label-4 {
+.lbl-1, .lbl-2, .lbl-3, .lbl-4 {
   width: 1.7rem;
   height: 1.7rem;
   margin: 0.7rem;
@@ -67,18 +74,18 @@ input {
   border: 0.3rem solid cornflowerblue;
   transition: .5s linear;
 }
-label:hover .label-1,
-label:hover .label-2,
-label:hover .label-3,
-label:hover .label-4 {
+label:hover .lbl-1,
+label:hover .lbl-2,
+label:hover .lbl-3,
+label:hover .lbl-4 {
   border-color: red;
   transform: scale(1.2);
   background-color: red;
 }
-label:active .label-1,
-label:active .label-2,
-label:active .label-3,
-label:active .label-4 {
+label:active .lbl-1,
+label:active .lbl-2,
+label:active .lbl-3,
+label:active .lbl-4 {
   border-color: red;
   background-color: white;
 }
@@ -104,74 +111,67 @@ label:active .label-4 {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
-.image {
-  width: 100%;
-  grid-row: 1 / 2;
-  object-fit: cover;
-  grid-column: 1 / 2;
-  border-radius: 0.8rem;
-}
 .i1, .i2, .i3, .i4, .t1, .t2, .t3, .t4  {
   transform: translateX(100%);
 }
-input.r1:checked~.images .i1 {
+input#r1:checked~.images .i1 {
   animation: smooth-feed 2s forwards;
 }
-input.r2:checked~.images .i2 {
+input#r2:checked~.images .i2 {
   animation: smooth-feed 2s forwards;
 }
-input.r3:checked~.images .i3 {
+input#r3:checked~.images .i3 {
   animation: smooth-feed 2s forwards;
 }
-input.r4:checked~.images .i4 {
+input#r4:checked~.images .i4 {
   animation: smooth-feed 2s forwards;
 }
-input.r1:checked~.txt-all .t1 {
+input#r1:checked~.txt-all .t1 {
   animation: smooth-feed 2s forwards;
 }
-input.r2:checked~.txt-all .t2 {
+input#r2:checked~.txt-all .t2 {
   animation: smooth-feed 2s forwards;
 }
-input.r3:checked~.txt-all .t3 {
+input#r3:checked~.txt-all .t3 {
   animation: smooth-feed 2s forwards;
 }
-input.r4:checked~.txt-all .t4 {
+input#r4:checked~.txt-all .t4 {
   animation: smooth-feed 2s forwards;
 }
-input.r1:checked ~ .buttons .label-1 {
+input#r1:checked ~ .buttons .lbl-1 {
   transform: scale(1.02);
   background-color: white;
   animation: pulse-key 0.8s infinite;
 }
-input.r2:checked ~ .buttons .label-2 {
+input#r2:checked ~ .buttons .lbl-2 {
   transform: scale(1.02);
   background-color: white;
   animation: pulse-key 0.8s infinite;
 }
-input.r3:checked ~ .buttons .label-3 {
+input#r3:checked ~ .buttons .lbl-3 {
   transform: scale(1.02);
   background-color: white;
   animation: pulse-key 0.8s infinite;
 }
-input.r4:checked ~ .buttons .label-4 {
+input#r4:checked ~ .buttons .lbl-4 {
   transform: scale(1.02);
   background-color: white;
   animation: pulse-key 0.8s infinite;
 }
-input.r1:checked ~ .buttons .label-1:hover {
+input#r1:checked ~ .buttons .lbl-1:hover {
   border-color: red;
 }
-input.r2:checked ~ .buttons .label-2:hover {
+input#r2:checked ~ .buttons .lbl-2:hover {
   border-color: red;
 }
-input.r3:checked ~ .buttons .label-3:hover {
+input#r3:checked ~ .buttons .lbl-3:hover {
   border-color: red;
 }
-input.r4:checked ~ .buttons .label-4:hover {
+input#r4:checked ~ .buttons .lbl-4:hover {
   border-color: red;
 }
 @media (max-width: 768px) {
-.text {
+p {
   font-size: 1.3rem;
 }
 .slider {
@@ -191,7 +191,7 @@ input.r4:checked ~ .buttons .label-4:hover {
   grid-column: 1 / 2;
   justify-content: center;
 }
-.label-1, .label-2, .label-3, .label-4 {
+.lbl-1, .lbl-2, .lbl-3, .lbl-4 {
   width: 1.2rem;
   height: 1.2rem;
   border: 0.2rem solid cornflowerblue;
@@ -201,7 +201,7 @@ input.r4:checked ~ .buttons .label-4:hover {
 .wrapper {
   margin: 0 1rem;
 }
-.text {
+p {
   font-size: 1.13rem;
 }
 .slider {
@@ -209,7 +209,7 @@ input.r4:checked ~ .buttons .label-4:hover {
   grid-template-columns: 1fr;
   grid-template-rows: 0rem 1fr 1rem 2rem;
 }
-.label-1, .label-2, .label-3, .label-4 {
+.lbl-1, .lbl-2, .lbl-3, .lbl-4 {
   width: 1rem;
   height: 1rem;
   border: 0.17rem solid cornflowerblue;
@@ -219,7 +219,7 @@ input.r4:checked ~ .buttons .label-4:hover {
 .wrapper {
   margin: 0 1rem;
 }
-.text {
+p {
   font-size: 0.9rem;
 }
 .slider {
@@ -227,7 +227,7 @@ input.r4:checked ~ .buttons .label-4:hover {
   grid-template-columns: 1fr;
   grid-template-rows: 0rem 1fr 1rem 2rem;
 }
-.label-1, .label-2, .label-3, .label-4 {
+.lbl-1, .lbl-2, .lbl-3, .lbl-4 {
   width: 0.8rem;
   height: 0.8rem;
   border: 0.13rem solid cornflowerblue;
