@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Trebuchet MS, Helvetica, sans-serif;
+}
+body {
+  background-color: white;
+}
+@keyframes pulse-key {
+  0% {
+  transform: scale(1.0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+  }
+  70% {
+  transform: scale(0.9);
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+  transform: scale(1.0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+label {
+  cursor: pointer;
+}
+.slider {
+  width: 50rem;
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-template-columns: 75% 25%;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.images {
+  display: grid;
+  grid-column-end: 3;
+  align-items: center;
+  grid-column-start: 1;
+}
+.txt-all {
+  display: grid;
+  align-items: center;
+}
+.label-1, .label-2, .label-3, .label-4 {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin: 0.7rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: cornflowerblue;
+  border: 0.3rem solid cornflowerblue;
+}
+label:hover .label-1,
+label:hover .label-2,
+label:hover .label-3,
+label:hover .label-4 {
+  border-color: red;
+  background-color: red;
+}
+label:active .label-1,
+label:active .label-2,
+label:active .label-3,
+label:active .label-4 {
+  border-color: red;
+  background-color: white;
+}
+.wrapper {
+  display: flex;
+  margin: 0 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.radio {
+  height: 0;
+  grid-row: 1;
+  grid-column: 1;
+}
+.image {
+  width: 100%;
+  grid-row: 1 / 2;
+  object-fit: cover;
+  grid-column: 1 / 2;
+  border-radius: 1rem;
+}
+.i1, .i2, .i3, .i4, .t1, .t2, .t3, .t4  {
+  opacity: 0;
+  transition: 1.8s;
+}
+.radio.r1:checked~.images .i1 {
+  opacity: 1;
+}
+.radio.r2:checked~.images .i2 {
+  opacity: 1;
+}
+.radio.r3:checked~.images .i3 {
+  opacity: 1;
+}
+.radio.r4:checked~.images .i4 {
+  opacity: 1;
+}
+.text {
+  grid-row: 1 / 2;
+  font-size: 1.8rem;
+  grid-column: 1 / 2;
+}
+.radio.r1:checked~.txt-all .t1 {
+  opacity: 1;
+}
+.radio.r2:checked~.txt-all .t2 {
+  opacity: 1;
+}
+.radio.r3:checked~.txt-all .t3 {
+  opacity: 1;
+}
+.radio.r4:checked~.txt-all .t4 {
+  opacity: 1;
+}
+.radio.r1:checked ~ .buttons .label-1 {
+  transform: scale(1.02);
+  background-color: white;
+  animation: pulse-key 0.8s infinite;
+}
+.radio.r2:checked ~ .buttons .label-2 {
+  transform: scale(1.02);
+  background-color: white;
+  animation: pulse-key 0.8s infinite;
+}
+.radio.r3:checked ~ .buttons .label-3 {
+  transform: scale(1.02);
+  background-color: white;
+  animation: pulse-key 0.8s infinite;
+}
+.radio.r4:checked ~ .buttons .label-4 {
+  transform: scale(1.02);
+  background-color: white;
+  animation: pulse-key 0.8s infinite;
+}
+.radio.r1:checked ~ .buttons .label-1:hover {
+  border-color: red;
+}
+.radio.r2:checked ~ .buttons .label-2:hover {
+  border-color: red;
+}
+.radio.r3:checked ~ .buttons .label-3:hover {
+  border-color: red;
+}
+.radio.r4:checked ~ .buttons .label-4:hover {
+  border-color: red;
+}
