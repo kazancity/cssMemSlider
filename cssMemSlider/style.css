@@ -150,3 +150,30 @@ label:active .label-4 {
 .radio.r4:checked ~ .buttons .label-4:hover {
   border-color: red;
 }
+@media (max-width: 768px) {
+.text {
+  font-size: 1.3rem;
+}
+.slider {
+  grid-template-columns: 1fr;
+  grid-template-rows: 0rem 1fr 2rem 2rem;
+}
+.images {
+  grid-column: 1 / 2;
+}
+.txt-all {
+  grid-row: 4 / 5;
+  grid-column: 1 / 2;
+  align-items: start;
+}
+.buttons {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  justify-content: center;
+}
+.label-1, .label-2, .label-3, .label-4 {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0.2rem solid cornflowerblue;
+}
+}
