@@ -177,3 +177,21 @@ label:active .label-4 {
   border: 0.2rem solid cornflowerblue;
 }
 }
+@media (max-width: 460px) {
+.wrapper {
+  margin: 0 1rem;
+}
+.text {
+  font-size: 1.13rem;
+}
+.slider {
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0rem 1fr 1rem 2rem;
+}
+.label-1, .label-2, .label-3, .label-4 {
+  width: 1rem;
+  height: 1rem;
+  border: 0.1rem solid cornflowerblue;
+}
+}
