@@ -58,7 +58,7 @@ p {
   justify-items: start;
   align-items: center;
   overflow: hidden;
-  transition: 1s linear;
+  transition: .5s linear;
 }
 .txt-all:hover {
   transform: scale(1.05);
@@ -72,7 +72,7 @@ p {
   border-radius: 50%;
   background-color: cornflowerblue;
   border: 0.3rem solid cornflowerblue;
-  transition: .5s linear;
+  transition: .2s linear;
 }
 label:hover .lbl-1,
 label:hover .lbl-2,
