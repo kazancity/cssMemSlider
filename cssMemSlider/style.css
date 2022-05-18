@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: white;
+  font-family: Trebuchet MS, Helvetica, sans-serif;
+}
+label {
+  cursor: pointer;
+}
+input {
+  height: 0;
+  grid-row: 1;
+  grid-column: 1;
+}
+.wrapper {
+  display: flex;
+  margin: 2rem 1rem;
+  justify-content: center;
+}
+.slider {
+  width: 55rem;
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-template-columns: 75% 25%;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.images {
+  display: grid;
+  overflow: hidden;
+  grid-column-end: 3;
+  grid-column-start: 1;
+}
+img {
+  width: 100%;
+  grid-row: 1 / 1;
+  object-fit: cover;
+  grid-column: 1 / 2;
+  border-radius: 0.8rem;
+}
+p {
+  width: 100%;
+  grid-row: 1 / 1;
+  font-size: 1.8rem;
+  grid-column: 1 / 1;
+}
+.txt-all {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  overflow: hidden;
+  transition: .5s linear;
+}
+.txt-all:hover {
+  transform: scale(1.05);
+  color: red;
+}
+.lbl-1, .lbl-2, .lbl-3, .lbl-4 {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin: 0.7rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: cornflowerblue;
+  border: 0.3rem solid cornflowerblue;
+  transition: .2s linear;
+}
+label:hover .lbl-1,
+label:hover .lbl-2,
+label:hover .lbl-3,
+label:hover .lbl-4 {
+  border-color: red;
+  transform: scale(1.2);
+  background-color: red;
+}
+label:active .lbl-1,
+label:active .lbl-2,
+label:active .lbl-3,
+label:active .lbl-4 {
+  border-color: red;
+  background-color: white;
+}
+@keyframes smooth-feed {
+  0% {
+  transform: translateX(100%);
+  }
+  100% {
+  transform: translateX(0%);
+  }
+}
+@keyframes pulse-key {
+  0% {
+  transform: scale(1.0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+  }
+  70% {
+  transform: scale(0.9);
+  box-shadow: 0 0 0 0.64rem rgba(0, 0, 0, 0);
+  }
+  100% {
+  transform: scale(1.0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+.i1, .i2, .i3, .i4, .t1, .t2, .t3, .t4  {
+  transform: translateX(100%);
+}
+input#r1:checked~.images .i1 {
+  animation: smooth-feed 2s forwards;
+}
+input#r2:checked~.images .i2 {
+  animation: smooth-feed 2s forwards;
+}
+input#r3:checked~.images .i3 {
+  animation: smooth-feed 2s forwards;
+}
+input#r4:checked~.images .i4 {
+  animation: smooth-feed 2s forwards;
+}
+input#r1:checked~.txt-all .t1 {
+  animation: smooth-feed 2s forwards;
+}
+input#r2:checked~.txt-all .t2 {
+  animation: smooth-feed 2s forwards;
+}
+input#r3:checked~.txt-all .t3 {
+  animation: smooth-feed 2s forwards;
+}
+input#r4:checked~.txt-all .t4 {
+  animation: smooth-feed 2s forwards;
+}
+input#r1:checked ~ .buttons .lbl-1 {
+  transform: scale(1.02);
+  background-color: white;
+  animation: pulse-key 0.8s infinite;
+}
+input#r2:checked ~ .buttons .lbl-2 {
+  transform: scale(1.02);
+  background-color: white;
+  animation: pulse-key 0.8s infinite;
+}
+input#r3:checked ~ .buttons .lbl-3 {
+  transform: scale(1.02);
+  background-color: white;
+  animation: pulse-key 0.8s infinite;
+}
+input#r4:checked ~ .buttons .lbl-4 {
+  transform: scale(1.02);
+  background-color: white;
+  animation: pulse-key 0.8s infinite;
+}
+input#r1:checked ~ .buttons .lbl-1:hover {
+  border-color: red;
+}
+input#r2:checked ~ .buttons .lbl-2:hover {
+  border-color: red;
+}
+input#r3:checked ~ .buttons .lbl-3:hover {
+  border-color: red;
+}
+input#r4:checked ~ .buttons .lbl-4:hover {
+  border-color: red;
+}
+@media (max-width: 48rem) {
+p {
+  font-size: 1.3rem;
+}
+.slider {
+  grid-template-columns: 1fr;
+  grid-template-rows: 0rem 1fr 2rem 2rem;
+}
+.images {
+  grid-column: 1 / 2;
+}
+.txt-all {
+  grid-row: 4 / 5;
+  grid-column: 1 / 2;
+  align-items: start;
+}
+.buttons {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  justify-content: center;
+}
+.lbl-1, .lbl-2, .lbl-3, .lbl-4 {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0.2rem solid cornflowerblue;
+}
+}
+@media (max-width: 29rem) {
+.wrapper {
+  margin: 0 1rem;
+}
+p {
+  font-size: 1.13rem;
+}
+.slider {
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0rem 1fr 1rem 2rem;
+}
+.lbl-1, .lbl-2, .lbl-3, .lbl-4 {
+  width: 1rem;
+  height: 1rem;
+  border: 0.17rem solid cornflowerblue;
+}
+}
+@media (max-width: 23rem) {
+.wrapper {
+  margin: 0 1rem;
+}
+p {
+  font-size: 0.9rem;
+}
+.slider {
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0rem 1fr 1rem 2rem;
+}
+.lbl-1, .lbl-2, .lbl-3, .lbl-4 {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 0.13rem solid cornflowerblue;
+}
+}
